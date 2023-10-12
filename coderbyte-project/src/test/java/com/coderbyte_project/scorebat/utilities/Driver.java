@@ -7,6 +7,7 @@ import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.firefox.FirefoxDriver;
 
+import io.cucumber.java.After;
 import io.github.bonigarcia.wdm.WebDriverManager;
 
 public class Driver {
@@ -42,6 +43,7 @@ public class Driver {
         return driverPool.get();
     }
 	
+	@After
 	public static void closeDriver() {
         if(driverPool.get() != null) {
             driverPool.get().quit();

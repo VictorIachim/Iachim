@@ -7,6 +7,8 @@ import com.coderbyte_project.scorebat.utilities.ConfigurationReader;
 import com.coderbyte_project.scorebat.utilities.Driver;
 import com.coderbyte_project.scorebat.utilities.BrowserUtils;
 
+import io.cucumber.java.After;
+import io.cucumber.java.Scenario;
 import io.cucumber.java.en.*;
 
 public class homePageStepDef extends BrowserUtils {
@@ -20,22 +22,21 @@ public class homePageStepDef extends BrowserUtils {
 
 	@Then("user has the following Developer Tools in sidebar menu")
 	public void user_has_the_following_developer_tools_in_sidebar_menu() {
-		verifyElementDisplayed(Driver.getDriver().findElement(By.xpath("developerTools")));
+		verifyElementDisplayed(homePage.developerTools);
 	}
 
 	@Then("user has the following Top Leagues in sidebar menu")
 	public void user_has_the_following_top_leagues_in_sidebar_menu() {
-		verifyElementDisplayed(Driver.getDriver().findElement(By.xpath("topLeagues")));
+		verifyElementDisplayed(homePage.topLeagues);
 	}
 
 	@Then("user has the following Countries in sidebar menu")
 	public void user_has_the_following_countries_in_sidebar_menu() {
-		verifyElementDisplayed(By.xpath("countries"));
+		verifyElementDisplayed(homePage.countries);
 	}
 
 	@Then("user has the following Sign In in sidebar menu")
 	public void user_has_the_following_sign_in_in_sidebar_menu() {
-		verifyElementDisplayed(By.xpath("signIn"));
+		verifyElementDisplayed(homePage.signIn);
 	}
-
 }
